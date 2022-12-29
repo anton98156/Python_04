@@ -85,7 +85,7 @@ def polynomial():
      num1 = random.randint(0,100)
      num2 = random.randint(0,100)
      num3 = random.randint(0,100)
-     polynomial = str(f"{num1}x^{k} + {num2}x^{k} + {num3} = 0")
+     polynomial = str(f"{num1}x^{k} + {num2}x^{k} + {num3}")
      return polynomial
 
 p = polynomial()
@@ -97,4 +97,20 @@ data.close
 
 data = open('file2', 'w')
 data.writelines(p2)
+data.close
+
+path = 'file'
+data = open(path, 'r')
+for line in data:
+    x = line
+
+path = 'file2'
+data = open(path, 'r')
+for line in data:
+    y = line
+    
+z = str(f"{x} + {y}")
+
+data = open('file3', 'w')
+data.writelines(z)
 data.close
